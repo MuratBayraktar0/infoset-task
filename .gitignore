@@ -1,0 +1,57 @@
+# Go binary and executable files
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Go test and benchmarking files
+*.test
+
+# Go build cache and generated files
+*.a
+*.o
+_build/
+
+# Go documentation
+*.doc
+*.docx
+*.log
+
+# Go binaries for macOS
+.idea/
+
+# Compiled Go packages
+*.pkg
+*.app
+
+# Go coverage reports
+*.cover
+
+# Go testing artifacts
+*.test
+
+# Dependency directories
+/vendor/
+/go.sum
+
+# Editor specific files
+.vscode/
+*.swp
+*.swo
+
+# Compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Log files
+*.log
+logs/
+
+# Temp directories
+/.tmp
+/tmp
