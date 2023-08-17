@@ -7,20 +7,28 @@ services:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: ${DB_DBNAME}
     volumes:
-      - ./:/docker-entrypoint-init.sql
+      - ./docker-entrypoint-init.sql:/docker-entrypoint-initdb.d/docker-entrypoint-init.sql
     ports:
-      - "${DB_PORT}:3307"
+      - "3307:3306"
+    networks:
+      - mynetwork
+
   go-app:
     build:
       context: .
       dockerfile: Dockerfile
-    depends_on:
-      - mysql
     ports:
       - "8080:8080"
+    restart: on-failure
     environment:
-      DB_HOST: ${DB_HOST}
+      DB_HOST: mysql
       DB_PORT: ${DB_PORT}
       DB_USER: ${DB_USERNAME}
       DB_PASSWORD: ${DB_PASSWORD}
       DB_NAME: ${DB_DBNAME}
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
