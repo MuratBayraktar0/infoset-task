@@ -1,4 +1,4 @@
-# Infoset Task
+# Nearby Restaurants
 
 The project has been developed using the Test-Driven Development (TDD) methodology and structured according to the principles of Clean Architecture.
 
